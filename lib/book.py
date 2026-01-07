@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 
 class Book:
-    def __init__(self, title, page_Count):
+    def __init__(self, title, page_count):
         self.title = title
-        self.page_Count = page_Count
-        print(f"You are on page {self.page_Count} of {self.title}")
-    
+        if not isinstance(page_count, int):
+            print("page_count is not an integer")
+        else:
+            self.page_count = page_count
+
     def turn_page(self):
-        self.page_Count += 1
-        print(f"You are now on page {self.page_Count} of {self.title}")
+        print("Flipping the page...wow, you read fast!")
+    
     pass
     
-Book1 = Book("A court of thorns and roses", 49)
+Book1 = Book("A court of thorns and roses", 10)
 Book1.turn_page()
